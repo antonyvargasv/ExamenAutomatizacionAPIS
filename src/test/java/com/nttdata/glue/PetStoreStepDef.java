@@ -18,23 +18,22 @@ public class PetStoreStepDef {
     public void laUrlEs(String url) {
         tienda.definirURL(url);
     }
-    @When("consulto la mascota con ID {string}")
-    public void consultoLaMascotaConID(String idMascota) {
-        tienda.consultarMascota(idMascota);
+
+    @When("creo el order con  {int}, {int} y {int}")
+    public void creoElOrderConIdPetIdYQuantity(int id, int petId, int quantity) {
+        tienda.crearOrder(id, petId, quantity);
     }
 
     @Then("valido el codigo de respuesta sea {int}")
-    public void validoElCodigoDeRespuestaSea(int statusCode) {
-        tienda.validacionRespuesta(statusCode);
+    public void validoElCodigoDeRespuestaSeaCodigoResponse(int codigoResponse) {
+        tienda.validacionRespuesta(codigoResponse);
     }
 
-    @And("valido el nombre de la mascota sea {string}")
-    public void validoElNombreDeLaMascotaSea(String nombreMascota) {
-        tienda.validarNombreMascota(nombreMascota);
+
+    @When("consulto el order con {int}")
+    public void consultoElOrderConOrderID(int petId) {
+        tienda.consultaOrderPororderId(petId);
     }
 
-    @When("creo la mascota {string} con ID {string}")
-    public void creoLaMascotaConID(String nombre, String id) {
-        tienda.crearMascota(nombre,id);
-    }
+
 }
