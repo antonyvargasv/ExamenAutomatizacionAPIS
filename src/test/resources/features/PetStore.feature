@@ -19,6 +19,7 @@ Feature: PetSore API - Order
     Given la url es "https://petstore.swagger.io/v2"
     When consulto el order con <petId>
     Then valido el codigo de respuesta sea <codigoResponse>
+    And valida datos de respuesta <id>, <petId>, <quantity>, "<status>", "<complete>"
     Examples:
       | id  | petId | quantity | status | complete | codigoResponse |
       | 100 | 100   | 30       | placed | true     | 200            |

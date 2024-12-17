@@ -14,6 +14,7 @@ import org.junit.Assert;
 public class PetStoreStepDef {
     @Steps
     PetStoreStep tienda;
+
     @Given("la url es {string}")
     public void laUrlEs(String url) {
         tienda.definirURL(url);
@@ -36,4 +37,13 @@ public class PetStoreStepDef {
     }
 
 
+   //// @And("valida que el id de la compra sea {int}")
+   // public void validaQueElIdDeLaCompraSeaId(int id) {
+     //   tienda.validarRespuestaID(id);
+  //  }
+
+    @And("valida datos de respuesta {int}, {int}, {int}, {string}, {string}")
+    public void validaDatosDeRespuestaIdPetIdQuantity(int id, int petId, int quantity,String status, String complete) {
+        tienda.validarRespuestaID(id, petId, quantity, status, complete);
+    }
 }
