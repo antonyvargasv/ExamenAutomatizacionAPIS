@@ -44,13 +44,13 @@ public class PetStoreStep {
     }
 
 
-    public void consultaOrderPororderId(int petId) {
+    public void consultaOrderPororderId(int id) {
         response = RestAssured
                 .given()
                 .relaxedHTTPSValidation()
                 .baseUri("https://petstore.swagger.io/v2")
                 .log().all()
-                .get("/store/order/" + petId)
+                .get("/store/order/" + id)
                 .then()
                 .log().all()
                 .extract().response();
@@ -62,7 +62,6 @@ public class PetStoreStep {
         assertThat(response.body().path("quantity"), CoreMatchers.equalTo(quantity));
         assertThat(response.body().path("status"), CoreMatchers.equalTo(status));
         Assert.assertTrue(response.body().path("complete"));
-        System.out.println("test terminado *******");
     }
 }
 

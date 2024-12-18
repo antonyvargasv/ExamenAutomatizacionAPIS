@@ -31,8 +31,8 @@ public class PetStoreStepDef {
     }
 
     @When("consulto el order con {int}")
-    public void consultoElOrderConOrderID(int petId) {
-        tienda.consultaOrderPororderId(petId);
+    public void consultoElOrderConOrderID(int id) {
+        tienda.consultaOrderPororderId(id);
     }
 
     @And("valida datos de respuesta {int}, {int}, {int}, {string}, {string}")
