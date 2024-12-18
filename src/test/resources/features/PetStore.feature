@@ -25,5 +25,3 @@ Feature: PetSore API - Order
       | 100 | 100   | 30       | placed | true     | 200            |
       | 200 | 200   | 80       | placed | true     | 200            |
       | 300 | 300   | 100      | placed | true     | 200            |
-
-
