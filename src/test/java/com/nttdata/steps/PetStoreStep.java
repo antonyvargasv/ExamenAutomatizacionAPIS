@@ -49,19 +49,12 @@ public class PetStoreStep {
                 .given()
                 .relaxedHTTPSValidation()
                 .baseUri("https://petstore.swagger.io/v2")
-                //.log().all()
+                .log().all()
                 .get("/store/order/" + petId)
                 .then()
                 .log().all()
                 .extract().response();
     }
-
-
-    //public void validarRespuestaID(int id) {
-    //   assertThat(response.body().path("id"), CoreMatchers.equalTo(id));
-    //
-    // }
-
 
     public void validarRespuestaID(int id, int petId, int quantity, String status, String complete) {
         assertThat(response.body().path("id"), CoreMatchers.equalTo(id));

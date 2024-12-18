@@ -30,20 +30,13 @@ public class PetStoreStepDef {
         tienda.validacionRespuesta(codigoResponse);
     }
 
-
     @When("consulto el order con {int}")
     public void consultoElOrderConOrderID(int petId) {
         tienda.consultaOrderPororderId(petId);
     }
 
-
-   //// @And("valida que el id de la compra sea {int}")
-   // public void validaQueElIdDeLaCompraSeaId(int id) {
-     //   tienda.validarRespuestaID(id);
-  //  }
-
     @And("valida datos de respuesta {int}, {int}, {int}, {string}, {string}")
-    public void validaDatosDeRespuestaIdPetIdQuantity(int id, int petId, int quantity,String status, String complete) {
+    public void validaDatosDeRespuestaIdPetIdQuantity(int id, int petId, int quantity, String status, String complete) {
         tienda.validarRespuestaID(id, petId, quantity, status, complete);
     }
 }
